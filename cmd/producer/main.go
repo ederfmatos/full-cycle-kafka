@@ -9,7 +9,9 @@ import (
 func main() {
 	deliveryChan := make(chan kafka.Event)
 	producer := NewKafkaProducer()
-	Publish("transferiu", "teste", producer, []byte("transferencia2"), deliveryChan)
+
+	Publish("Nova mensagem", "teste", producer, []byte("transferencia"), deliveryChan)
+
 	DeliveryReport(deliveryChan) // async
 }
 
